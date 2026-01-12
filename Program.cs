@@ -4,7 +4,7 @@ namespace C_learning;
 
 class Program
 {
-    static void Main(string[] args)
+    static void WorkMain(string[] args)
     {
         SumFromInput();
         HomeworkExample();
@@ -128,16 +128,43 @@ class Program
                 break;
         }
     }
-
     static void fastCalc()
     {
-        ConsoleKey consoleKey = Console.ReadKey().Key;
+        double firstValue, secondValue;
+        string action;
+
+        Console.WriteLine("Write numm 1:");
+        firstValue = double.Parse(Console.ReadLine());
         
-    }
+        Console.WriteLine("Write numm 2:");
+        secondValue = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Choose your operator:");
+        action = Console.ReadLine();
+
+        switch(action)  
+        {
+            case "+":
+                Console.WriteLine(firstValue + secondValue);
+                break;
+            case "-":
+                Console.WriteLine(firstValue - secondValue);
+                break;
+            case "*":
+                Console.WriteLine(firstValue * secondValue);
+                break;
+            case "/":
+                Console.WriteLine(firstValue / secondValue);
+                break;   
+            default:
+                if (secondValue == 0)
+                    Console.WriteLine(0);
+                else
+                    Console.WriteLine("Error! mistake in operator");
+                break;
+        }
+    } 
 }
-
-
-
 
 
 

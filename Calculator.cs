@@ -1,49 +1,102 @@
 using System;
 
-namespace Calculator;
+namespace HomeWorkCalculator;
 
 
-class Calculator
+class MyCalculator
 {   
-    static void Main(string[] args)
+    static void CalcMain(string[] args)
     {
-    Calculatorswitch();
+    SwitchMainProzess(); 
+    IF_else_MainProzess();
     }
 
-
-    static void Calculatorswitch()
+    static void SwitchMainProzess()
     {
-        ConsoleKey consoleKey = Console.ReadKey().Key;
-        switch (consoleKey)
+        Console.WriteLine("Write your num: ");
+        double aS = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("WRrite your operator: ");
+        string opS = Console.ReadLine();
+
+        Console.WriteLine("Write your 2 num: ");
+        double bS = Convert.ToDouble(Console.ReadLine());
+
+        double resultS = 0;
+
+        switch (opS)
         {
-            case ConsoleKey.NumPad0:
+            case "+":
+                resultS = aS + bS;
                 break;
-            case ConsoleKey.NumPad1:
+            case "-":
+                resultS = aS - bS;
                 break;
-            case ConsoleKey.NumPad2:
+            case "*":
+                resultS = aS * bS;
                 break;
-            case ConsoleKey.NumPad3:
+            case "/":
+                resultS = aS / bS;
                 break;
-            case ConsoleKey.NumPad4:
-                break;
-            case ConsoleKey.NumPad5:
-                break;
-            case ConsoleKey.NumPad6:
-                break;
-            case ConsoleKey.NumPad7:
-                break;
-            case ConsoleKey.NumPad8:
-                break;
-            case ConsoleKey.NumPad9:
-                break;
-            case ConsoleKey.NumPad3:
-                break;
-            case ConsoleKey.NumPad3:
-                break;
-            case ConsoleKey.NumPad3:
-                break;
-            case ConsoleKey.NumPad3:
-                break;
-        }   
+        }
+
+        Console.WriteLine("Result is: " + resultS);
     }
+
+
+
+
+   static void IF_else_MainProzess()
+    {
+        while (true)
+        {
+            Console.Clear();
+
+            double a = 0;
+            double b = 0;
+
+            try
+            {
+                Console.WriteLine("Screib deine 1 nummer: ");
+                a = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Screib deine 2 nummer: ");
+                b = Convert.ToDouble(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.Write("We need a number!");
+                Console.ReadLine();
+                continue;
+            }
+
+            Console.WriteLine("Schreib deine operator: ");
+            string op = Console.ReadLine();
+
+            double result = 0;
+
+            if (op == "+")
+            {
+                result = a + b;
+            }
+            else if (op == "-")
+            {
+                result = a - b;
+            }
+            else if (op == "*")
+            {
+                result = a * b;
+            }
+            else if (op == "/")
+            {
+                result = a / b;
+            }
+
+            Console.WriteLine("Dein Ergebnis ist: " + result);
+            Console.ReadLine();
+        }
+    }
+
+
+    /* написати програму де буде визначення які кнопки і потім для оперторів викоритсати якшо в тому є такий оператор то робить */
 }
