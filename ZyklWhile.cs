@@ -4,7 +4,7 @@ namespace ZYklWhile;
 
 class Program
 {
-    static void Main(string[] args)
+    static void WhileMain(string[] args)
     {
     WorkZykl();
     HomeWorkZykl();
