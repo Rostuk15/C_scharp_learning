@@ -9,7 +9,7 @@ class Program
     {
     }
 
-    static void Main(string[] args)
+    static void VlogeniyMain(string[] args)
     {
         VlogeniyZyklWork();
         HomeWork();
