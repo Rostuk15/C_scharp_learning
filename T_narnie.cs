@@ -4,7 +4,7 @@ namespace C_learning.C_Scharp_learning_udemy;
 
 public class T_narnie
 {
-    static void Main(String[] args)
+    static void T_narnieMain(String[] args)
     {
         T_nar();
     }
