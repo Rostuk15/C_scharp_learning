@@ -6,11 +6,12 @@ public class Massiv
     {
         massiv_Urok();
         massiv_Selbst();
+        Massiv_HW();
     }
     
     /* массивм , одномірні массиви, тип елемента і імя [] */
     
-    staic void massiv_Urok()
+    static void massiv_Urok()
     {
         int[] myArray;
 
@@ -55,5 +56,53 @@ public class Massiv
         string b = myArray2[1];
         Console.WriteLine(b);
     }
-    
+
+
+    static void Massiv_HW()
+    {
+        
+        Console.WriteLine("write your Index: ");
+        int index = int.Parse(Console.ReadLine());
+        
+        int[] myArrayHw = new int[index];
+        
+        for (int i = 0; i < myArrayHw.Length; i++)
+        {
+            Console.Write($"Введи значення для індексу {i}: ");
+            myArrayHw[i] = int.Parse(Console.ReadLine());
+        }
+        
+        for (int k = myArrayHw.Length - 1; k >= 0; k--)
+            {
+            Console.WriteLine(myArrayHw[k]);
+            }
+
+        int result = 0;
+            
+        for (int k = 0; k < myArrayHw.Length; k++)
+        {
+            if (myArrayHw[k] % 2 == 0)
+                {
+                    result += myArrayHw[k];    
+                    Console.WriteLine(myArrayHw[k]);
+                }
+        }        
+        Console.WriteLine(result);
+        
+        /* min num */
+
+        int[] myarrayHw1 = { 2, 3, 99, 49, 64, 77, 4, 42, 5 };
+        
+        int minValue = myarrayHw1[0];
+        
+        for (int i = 1; i < myarrayHw1.Length; i++)
+            {
+                if (myarrayHw1[i] < minValue)
+                    {
+                    minValue = myarrayHw1[i];
+                    }
+            }
+
+        Console.WriteLine(minValue);
+    }
 }
