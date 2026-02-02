@@ -1,3 +1,11 @@
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Globalization;
+
+
 namespace C_learning;
 
 public class Massiv
@@ -7,6 +15,8 @@ public class Massiv
         massiv_Urok();
         massiv_Selbst();
         Massiv_HW();
+        TypischLösungen();
+        statunddiap();
     }
     
     /* массивм , одномірні массиви, тип елемента і імя [] */
@@ -105,4 +115,50 @@ public class Massiv
 
         Console.WriteLine(minValue);
     }
+
+    static void TypischLösungen()
+    {
+        int[] myarray1 = { 2, 3, 99, 49, 64, 77, 4, 42, 5, 77, 2, 99, 4 };
+
+        int result = myarray1.Max();
+        Console.WriteLine(result);
+        Console.WriteLine(myarray1.Where(i => i % 2 == 0).Sum());
+        Console.WriteLine(myarray1.Where(i => i % 2 != 0).Min());
+        
+        int[] result2 = myarray1.Distinct().ToArray();  // унікальні елементи масиву
+        int[] result3 = myarray1.OrderBy(i => i).ToArray(); // відсортовані елементи старого масиву 
+        
+        Array.Sort(myarray1);
+        int result4 = Array.Find(myarray1, i => i < 70); // first numm FindLast - last
+        
+        int[] result5 = Array.FindAll(myarray1, i => i > 70);
+        
+        int result6 = Array.FindIndex(myarray1, i => i == 77);
+        
+        Array.Reverse(myarray1);
+        
+        // int result7 = Array.Where(i => i <= 0).FirstOrDefault();
+       //  Console.WriteLine(result7);
+    }
+    
+    static void statunddiap()
+    {
+        int[] myarray2 = { 2, 3, 99, 49, 64, 77, 4, 42, 5, 77, 2, 99, 4 };
+
+        Console.WriteLine(myarray2.Length - 1);
+        Console.WriteLine(myarray2[^1]);
+        Index myIndex = new Index(3, true); // from end ^3
+        Console.WriteLine(myarray2[myIndex]);
+        
+        int[] myarray3 = myarray2[1..4];
+        
+        string str = "Hello World";
+        Console.WriteLine(str[0]);
+        
+        foreach (int item in myarray2[..4])
+            {
+            Console.WriteLine(item);
+            }
+    }
+    
 }
