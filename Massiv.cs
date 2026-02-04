@@ -17,6 +17,7 @@ public class Massiv
         Massiv_HW();
         TypischLösungen();
         statunddiap();
+        twoMMassiv();
     }
     
     /* массивм , одномірні массиви, тип елемента і імя [] */
@@ -159,6 +160,51 @@ public class Massiv
             {
             Console.WriteLine(item);
             }
+        
+        
+        // 2 merniy massiv [,]
+        
+        
+    }
+    
+    static void twoMMassiv()
+    {
+        int[,] myArray = new int [3, 5] // if [3,5] muss 3,5 if [,] - egal ,passt noch ohne new int [3, 5] 
+        {
+            {2,45,12,51,51},
+            {6,7,8,3,1},
+            {1,5,65,78,13}
+        };
+
+        foreach (var item in  myArray)
+        {
+            Console.WriteLine(item);
+        }
+        
+        
+        int[,] myArray1 = new int [,] 
+        {
+            {2,45,12,51,51},
+            {6,7,8,3,1},
+            {1,5,65,78,13}
+        };
+
+        Console.WriteLine(myArray1.Rank);
+
+        myArray1.GetLength(0); // wie viel element im 1 und 2 ismirenii wenn 0 -> 3 wenn 1 -> 5
+        
+        int height = myArray1.GetLength(0); 
+        int width = myArray1.GetLength(1);
+
+        for (int y = 0; y < height; y++) // statt height myArray1.GetLength(0)
+        {
+            for (int x = 0; x < width; x++) // statt width myArray1.GetLength(1)
+            {
+                Console.Write(myArray1[y, x] + "t");
+            }
+            Console.WriteLine(); // perenis na 2 stroku
+        }
+        
     }
     
 }
