@@ -18,6 +18,7 @@ public class Massiv
         TypischLösungen();
         statunddiap();
         twoMMassiv();
+        TastaturMassiv();
     }
     
     /* массивм , одномірні массиви, тип елемента і імя [] */
@@ -205,6 +206,55 @@ public class Massiv
             Console.WriteLine(); // perenis na 2 stroku
         }
         
+        // gefühl twomer massiv and tastatur
+
+        int[,] myArray3 = new int[10,6];
+        
+        Random rnd = new Random();
+        
+        for (int i = 0; i < myArray3.GetLength(0); i++)
+        {
+            for (int j = 0; j < myArray3.GetLength(1); j++) 
+            {
+                myArray3[i, j] = rnd.Next(0, 100); // можна без символі тут позначаєм діапазон
+            }
+        }
+    
+        for (int y = 0; y < myArray3.GetLength(0); y++) // statt height myArray1.GetLength(0)
+        {
+            for (int x = 0; x < myArray3.GetLength(1); x++) // statt width myArray1.GetLength(1)
+            {
+                Console.Write(myArray3[y, x] + "t");
+            }
+            Console.WriteLine(); // perenis na 2 stroku
+        }
+
+    }
+
+    static void TastaturMassiv()
+    {
+        int[,] myArray = new int[2,3];
+        
+        
+        for (int i = 0; i < myArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < myArray.GetLength(1); j++) 
+            {
+                Console.WriteLine("Y: " + i + " X: " +j);
+                myArray[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine();
+        
+        for (int y = 0; y < myArray.GetLength(0); y++) // statt height myArray1.GetLength(0)
+        {
+            for (int x = 0; x < myArray.GetLength(1); x++) // statt width myArray1.GetLength(1)
+            {
+                Console.Write(myArray[y, x] + "t");
+            }
+            Console.WriteLine(); // perenis na 2 stroku
+        }
     }
     
 }
