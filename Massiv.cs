@@ -19,6 +19,8 @@ public class Massiv
         statunddiap();
         twoMMassiv();
         TastaturMassiv();
+        StepMassiv();
+        threeandMoreMassiv();
     }
     
     /* массивм , одномірні массиви, тип елемента і імя [] */
@@ -255,6 +257,108 @@ public class Massiv
             }
             Console.WriteLine(); // perenis na 2 stroku
         }
+    }
+    
+    
+    // sybchastyy massiv - massiv with other massiv
+
+    static void StepMassiv()
+    {
+        int[][] myArray = new int[3][];
+        myArray[0] = new int[2];
+        myArray[1] = new int[4];
+        myArray[2] = new int[1];
+
+        Random rnd = new Random();
+
+        for (int i = 0; i < myArray.Length; i++)
+        {
+            for (int j = 0; j < myArray[i].Length; j++)
+            {
+                myArray[i][j] = rnd.Next(100);
+            }
+        }
+        
+        for (int i = 0; i < myArray.Length; i++)
+        {
+            for (int j = 0; j < myArray[i].Length; j++)
+            {
+                Console.Write(myArray[i][j] + "\t");
+            }
+
+            Console.WriteLine();
+        }
+        
+    }
+    
+    static void threeandMoreMassiv()
+    {
+        Random rnd = new Random();
+        
+        int[,,] myArray = new int[4,3,5];
+
+        for (int i = 0; i < myArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < myArray.GetLength(1); j++)
+            {
+                for (int k = 0; k < myArray.GetLength(3); k++)
+                {
+                    myArray[i, j, k] = rnd.Next(100);
+                }
+            }
+        }
+        
+        for (int i = 0; i < myArray.GetLength(0); i++)
+        {
+            Console.WriteLine("Page: "+ (i + 1)); // ohne () bag mit seiter 11 stat 1
+            
+            for (int j = 0; j < myArray.GetLength(1); j++)
+            {
+                for (int k = 0; k < myArray.GetLength(3); k++)
+                {
+                    Console.Write(myArray[i, j, k] + " "); 
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("#####################");
+        }
+
+        int[][][] myArray1 = new int[rnd.Next(3, 6)][][];
+
+        for (int i = 0; i < myArray1.Length; i++)
+        {
+            myArray1[i] = new int[rnd.Next(2, 6)][];
+
+            for (int j = 0; j < myArray1[i].Length; j++)
+            {
+                myArray1[i][j] = new int[rnd.Next(2, 6)];
+
+                for (int k = 0; k < myArray1[i][j].Length; k++)
+                {
+                    myArray1[i][j][k] = rnd.Next(100);
+                }
+            }
+        }
+
+        for (int i = 0; i < myArray1.Length; i++)
+        {
+            Console.WriteLine("Page: " + (i + 1));
+
+            for (int j = 0; j < myArray1[1].Length; j++)
+            {
+                for (int k = 0; k < myArray1[i][j].Length; k++)
+                {
+                    for (int l = 0; l < myArray1[i][j][k]; l++)
+                    {
+                        Console.WriteLine(myArray1[i][j][k] + " ");
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+        
     }
     
 }
